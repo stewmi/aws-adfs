@@ -74,4 +74,5 @@ def _retrieve_roles_page(roles_page_url, context, session, ssl_verification_enab
 def _action_url_on_validation_success(html_response):
     vip_auth_method = './/form[@id="options"]'
     element = html_response.find(vip_auth_method)
+    logging.debug("SYMANTEC ELEMENT: {}", element)
     return element.get('action')
